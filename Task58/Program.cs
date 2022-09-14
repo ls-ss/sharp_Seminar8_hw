@@ -8,29 +8,29 @@
 */
 Console.Clear();
 
-/* Аргументы ф-ции CreateMatrix(row (кол-во сторк), col (кол-во столбцов), 
+/* Аргументы ф-ции CreateMatrix2(row (кол-во сторк), col (кол-во столбцов), 
    min, max (диапазон максимальных и минимальных значений элементов массива)) */
-int[,] matrixA = CreateMatrix(5, 4, 0, 9);
+int[,] matrixA = CreateMatrix2(5, 4, 0, 9);
 Console.WriteLine("Матрица A:");
-PrintMatrix(matrixA);
+PrintMatrix2(matrixA);
 Console.WriteLine();
 
-int[,] matrixB = CreateMatrix(4, 6, 0, 9);
+int[,] matrixB = CreateMatrix2(4, 6, 0, 9);
 Console.WriteLine("Матрица B:");
-PrintMatrix(matrixB);
+PrintMatrix2(matrixB);
 Console.WriteLine();
 
 int[,] matrixC = MultiTwoMatrix(matrixA, matrixB);
 if( matrixC[0,0] != -1 )
 {
     Console.WriteLine("Произведение двух матриц А и В:");
-    PrintMatrix(matrixC);
+    PrintMatrix2(matrixC);
 }
 Console.WriteLine();
 
 // Ф-ция задающая двумерный массив по переданным кол-вам сторк (row) и столбцов (col), 
 // и заполняющая массив элементами случайным образом в диапазоне значений min и max.
-int[,] CreateMatrix(int row, int col, int min, int max){
+int[,] CreateMatrix2(int row, int col, int min, int max){
     Random rnd = new Random();
 
     int[,] array = new int[row, col];
@@ -45,8 +45,8 @@ int[,] CreateMatrix(int row, int col, int min, int max){
     return array;
 }
 
-// Ф-ция вывода на консоль матрицы с форматированием интервала между элементами
-void PrintMatrix(int[,] array){
+// Ф-ция вывода на консоль двумерной матрицы с форматированием интервала между элементами
+void PrintMatrix2(int[,] array){
     for(int i = 0; i < array.GetLength(0); i++){
         Console.Write("[ ");
         for(int j = 0; j < array.GetLength(1); j++){
